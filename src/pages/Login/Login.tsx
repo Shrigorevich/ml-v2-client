@@ -1,35 +1,37 @@
 import { useEffect } from 'react';
-import './Login.css';
+import { Link } from "react-router-dom";
+import styles from './Login.module.css';
 
 const Login: React.FC = () => {
 	useEffect(() => {
 		document.title = 'Login';
 	}, [])
 
-	return <div>
-		<div className="login">
-			<div className="login-form">
-				<div className="login-form__label label">
-					<div className="label__icon">
+	return (
+		<div className={styles.login}>
+			<div className={styles.login_modal}>
+				<div className={styles.login_label}>
+					<div className={styles.login_label_icon}>
 						<img src={require("../../img/sword.png")} alt="Login" />
 					</div>
-					<div className="label__text">
+					<div className={styles.login_label_text}>
 						Welcome back!
 					</div>
 				</div>
-				<div className="login-form__form form">
-					<input type="text" name="username" placeholder="Username" autoComplete="off" />
+				<div className={styles.login_form}>
+					<input type="text" name="login" placeholder="Login" autoComplete="off" />
 					<input type="password" name="password" placeholder="Password" autoComplete="off" />
 					<button type="button">Login</button>
 				</div>
-				<div className="login-form__footer footer">
-					<a href="#" className="footer__forgot-password">Forgot your password?</a>
-					<a href="#" className="footer__sign-up">Don’t have an account? <span className="footer__get-started">Get started</span>
-					</a>
+				<div className={styles.login_footer}>
+					<Link to="/restore" className={styles.login_forgot_password}>Forgot your password?</Link>
+					<Link to="/register" className={styles.login_sign_up}>
+						Don’t have an account? <span className={styles.login_get_started}>Get started</span>
+					</Link>
 				</div>
 			</div>
 		</div>
-	</div>
+	);
 };
 
-export { Login };
+export default Login;
