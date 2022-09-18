@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import styles from './RestoreAccount.module.css';
+import styles from './../../Login/Login.module.css';
+import stylesRestore from "./RestoreAccount.module.css"
 import { useState } from "react";
 import cn from 'classnames';
 
@@ -12,29 +13,29 @@ const RestoreAccount: React.FC = () => {
 	};
 
 	return (
-		<div className={styles.restore}>
-			<div className={styles.restore_modal}>
-				<div className={styles.restore_label}>
-					<div className={styles.restore_label_icon}>
+		<div className={styles.login}>
+			<div className={styles.login_modal}>
+				<div className={styles.login_label}>
+					<div className={styles.login_label_icon}>
 						<img src={require("../../../img/shovel.png")} alt="Login" />
 					</div>
-					<div className={styles.restore_label_text}>
+					<div className={styles.login_label_text}>
 						Restore Password
 					</div>
 				</div>
 				{!buttonClicked
-					? <div className={styles.restore_form}>
+					? <div className={cn(styles.login_form, stylesRestore.login_form)}>
 						<label htmlFor="restore">Enter your email address to receive a password recovery link.</label>
 						<input onChange={onChangeHandler} type="email" name="restore" placeholder="Email" autoComplete="off" />
-						<button type="button" onClick={() => { email.trim().length && setButtonClicked(true) }}>Procceed</button>
+						<button type="button" onClick={() => { email.trim().length && setButtonClicked(true) }}>Proceed</button>
 					</div>
-					: <div className={cn(styles.restore_form, styles.linkSent)}>
+					: <div className={cn(styles.login_form, stylesRestore.linkSent)}>
 						<p>The link has been sent to your email!</p>
 					</div>
 				}
-				<div className={styles.restore_footer}>
-					<Link to="/login" className={styles.restore_back}>
-						Back to <span className={styles.back_to_login}>Log In</span>
+				<div className={styles.login_footer}>
+					<Link to="/login" className={cn(styles.login_footer_right, stylesRestore.login_footer_right)}>
+						Back to <span>Log In</span>
 					</Link>
 				</div>
 			</div>

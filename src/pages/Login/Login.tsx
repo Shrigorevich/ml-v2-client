@@ -5,7 +5,7 @@ import styles from './Login.module.css';
 const Login: React.FC = () => {
 	useEffect(() => {
 		document.title = 'Login';
-	}, [])
+	}, []);
 
 	return (
 		<div className={styles.login}>
@@ -24,9 +24,9 @@ const Login: React.FC = () => {
 					<button type="button">Login</button>
 				</div>
 				<div className={styles.login_footer}>
-					<Link to="/restore" className={styles.login_forgot_password}>Forgot your password?</Link>
-					<Link to="/register" className={styles.login_sign_up}>
-						Don’t have an account? <span className={styles.login_get_started}>Get started</span>
+					<Link to="/restore" className={styles.login_footer_left}>Forgot your password?</Link>
+					<Link to="/register" className={styles.login_footer_right}>
+						Don’t have an account? <span>Get started</span>
 					</Link>
 				</div>
 			</div>

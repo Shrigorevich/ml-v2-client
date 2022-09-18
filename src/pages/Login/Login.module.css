@@ -10,10 +10,11 @@
 }
 
 .login_modal {
-	min-width: 25%;
 	color: #fff;	
 	position: relative;
 	bottom: 5%;
+	width: 400px;
+	padding: 0 15px;
 }
 
 .login_label {
@@ -91,25 +92,26 @@
 	font-size: 12px;
 	max-width: 100%;
 	color: rgba(255, 255, 255, 0.768);
-	margin: 25px 10px 0;
+	margin: 20px 10px 0;
 }
 
 .login_footer a {
 	transition: all 0.2s ease;
+	line-height: 2;
 }
 
 .login_footer a:hover {
 	color: #fff;
 }
 
-.login_forgot_password {
+.login_footer_left {
 	margin-right: 10px;
 }
 
-.login_sign_up {
+.login_footer_right {
 	margin-left: 10px;
 }
 
-.login_get_started {
+.login span {
 	font-weight: 700;
 }
